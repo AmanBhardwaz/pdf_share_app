@@ -1,0 +1,29 @@
+{
+  "name": "pdf-sharing-website",
+  "version": "1.0.0",
+  "description": "A modern PDF sharing website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "fs-extra": "^11.3.0",
+    "multer": "^1.4.5-lts.1",
+    "path": "^0.12.7",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": [
+    "pdf",
+    "sharing",
+    "upload",
+    "web"
+  ],
+  "author": "PDF Sharing App",
+  "license": "MIT"
+}

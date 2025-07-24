@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Share - Upload & Share PDFs Easily</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-file-pdf"></i>
+                <h1>PDF Share</h1>
+            </div>
+            <p class="subtitle">Upload, Share, and View PDFs Instantly</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Upload Section -->
+            <section class="upload-section">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h3>Drag & Drop your PDF here</h3>
+                    <p>or <span class="browse-text">browse files</span></p>
+                    <input type="file" id="fileInput" accept=".pdf" hidden>
+                    <div class="file-info">
+                        <small>Maximum file size: 50MB</small>
+                    </div>
+                </div>
+                <div class="progress-container" id="progressContainer" style="display: none;">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <span class="progress-text" id="progressText">0%</span>
+                </div>
+            </section>
+
+            <!-- Upload Result -->
+            <section class="result-section" id="resultSection" style="display: none;">
+                <div class="result-card">
+                    <div class="result-header">
+                        <i class="fas fa-check-circle success-icon"></i>
+                        <h3>Upload Successful!</h3>
+                    </div>
+                    <div class="file-details">
+                        <div class="file-name" id="fileName"></div>
+                        <div class="file-size" id="fileSize"></div>
+                        <div class="upload-date" id="uploadDate"></div>
+                    </div>
+                    <div class="share-section">
+                        <label>Share Link:</label>
+                        <div class="share-link-container">
+                            <input type="text" id="shareLink" readonly>
+                            <button class="copy-btn" id="copyBtn">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <a href="#" id="viewBtn" class="btn btn-primary" target="_blank">
+                            <i class="fas fa-eye"></i> View PDF
+                        </a>
+                        <a href="#" id="downloadBtn" class="btn btn-secondary">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                        <button class="btn btn-outline" id="uploadAnotherBtn">
+                            <i class="fas fa-plus"></i> Upload Another
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- File Management -->
+            <section class="management-section">
+                <div class="section-header">
+                    <h3><i class="fas fa-folder-open"></i> Recent Uploads</h3>
+                    <button class="btn btn-small" id="refreshBtn">
+                        <i class="fas fa-refresh"></i> Refresh
+                    </button>
+                </div>
+                <div class="files-list" id="filesList">
+                    <!-- Files will be loaded here -->
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 PDF Share. Share your documents securely and easily.</p>
+        </footer>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <div class="toast-content">
+            <span class="toast-message" id="toastMessage"></span>
+            <button class="toast-close" id="toastClose">&times;</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
